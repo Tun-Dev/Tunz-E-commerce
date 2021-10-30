@@ -22,8 +22,9 @@ export default makeStyles((theme) => ({
   },
   cardDetails: {
     display: 'flex',
+    flexDirection: 'row',
     marginTop: '10%',
     width: '100%',
-    justifyContent: 'space-between',
+    justifyContent: 'space-evenly',
   },
 }));
