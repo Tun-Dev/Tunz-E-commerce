@@ -32,7 +32,7 @@ const Navbar = ({ totalItems }) => {
                             height="25px"
                             className={classes.image}
                         />
-                        ZEUS PHONES
+                        TuShop
                     </Typography>
                     <div className={classes.grow} />
                     {location.pathname === "/" && (
