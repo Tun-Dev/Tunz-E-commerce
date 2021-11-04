@@ -6,6 +6,7 @@ import useStyles from './styles'
 import AddressForm from '../AddressForm';
 import PaymentForm from '../PaymentForm';
 import { Link, useHistory } from 'react-router-dom';
+import styles from '../Checkout/checkout.module.css'
 
 const steps = ['Shipping address', 'Payment details'];
 
@@ -43,10 +44,16 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
 
     let Confirmation = () => order.customer ? (
         <>
-            <div>
-                <Typography variant="h5" >Thank you for shopping with us, {order.customer.firstname} {order.customer.lastname}</Typography>
+            <div className={styles.con} >
+                <div className={styles.success} >
+                    <div className={styles.markcon} >
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none" /><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" /></svg>
+                    </div>
+                    <Typography className={styles.font} >Payment Sucessful</Typography>
+                </div>
+                <Typography variant="h6"  >Thank you for shopping with us, {order.customer.firstname} {order.customer.lastname}</Typography>
                 <Divider className={classes.divider} />
-                <Typography variant="subtitle2" >Order ref: {order.customer_reference} </Typography>
+                <Typography variant="subtitle1" >Order ref: {order.customer_reference} </Typography>
             </div>
             <br />
             <Button component={Link} to="/" variant="outlined" type="button" >Back to Home</Button>
@@ -75,7 +82,7 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
             <div className={classes.toolbar} />
             <main className={classes.layout} >
                 <Paper className={classes.paper} >
-                    <Typography variant="h4" align="center" >Checkout</Typography>
+                    <Typography variant="h4" className={styles.font} align="center" >Checkout</Typography>
                     <Stepper activeStep={activeStep} className={classes.stepper} >
                         {steps.map((step) => (
                             <Step key={step} >

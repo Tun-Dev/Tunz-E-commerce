@@ -5,6 +5,7 @@ import Product from "./Product/Product";
 
 import Shoe from '../../images/shoe.png'
 import Mac from '../../images/mac.jpeg'
+import styles from './Products.module.css'
 
 import useStyles from './styles'
 
@@ -17,6 +18,14 @@ const Products = ({ products, onAddToCart }) => {
     const classes = useStyles()
     return (
         <main className={classes.content} >
+            <div className={styles.intro} >
+                <div className={styles.left} >
+                    <h1 className={styles.leftword} >Welcome to TuShop</h1>
+                </div>
+                <div className={styles.right} >
+                    <p className={styles.rightword} >Your home of Gadgets</p>
+                </div>
+            </div>
             <div className={classes.toolbar} />
             <Grid container justifyContent="center" spacing={4}>
                 {products.map((product) => (
