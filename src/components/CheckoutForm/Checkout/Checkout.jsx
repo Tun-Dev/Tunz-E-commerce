@@ -13,7 +13,7 @@ const steps = ['Shipping address', 'Payment details'];
 const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
     const classes = useStyles()
     const [checkoutToken, setCheckoutToken] = useState(null)
-    const [activeStep, setActiveStep] = useState(1);
+    const [activeStep, setActiveStep] = useState(0);
     const [shippingData, setShippingData] = useState({})
     const history = useHistory();
 
