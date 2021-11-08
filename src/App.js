@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { commerce } from './lib/commerce';
-import { Products, Navbar, Cart, Checkout } from './components'
+import { Products, Navbar, Cart, Checkout, Footer } from './components'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import SimpleModal from './components/Products/Desc';
+
 
 
 const App = () => {
@@ -92,9 +92,6 @@ const App = () => {
                             onCaptureCheckout={handleCaptureCheckout}
                             error={errorMessage}
                         />
-                    </Route>
-                    <Route exact path="/test" >
-                        <SimpleModal />
                     </Route>
                 </Switch>
             </div>

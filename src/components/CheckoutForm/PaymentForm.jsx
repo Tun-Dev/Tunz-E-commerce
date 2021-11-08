@@ -54,6 +54,11 @@ const PaymentForm = ({ checkoutToken, shippingData, backStep, onCaptureCheckout,
             <Review checkoutToken={checkoutToken} />
             <Divider />
             <Typography variant="h6" gutterBottom style={{ margin: '20px 0' }} >Payment methods</Typography>
+            <Typography variant="body2">This is a test site, use these below to test mail confirmation </Typography>
+            <Typography variant="body2" >Card number: 4242 4242 4242 4242</Typography>
+            <Typography variant="body2" >MM/YY: 04/24</Typography>
+            <Typography variant="body2" >CVC: 242</Typography>
+            <Typography variant="body2" style={{ marginBottom: '20px' }} >ZIP: 42424</Typography>
             <Elements stripe={stripePromise} >
                 <ElementsConsumer>
                     {({ elements, stripe }) => (

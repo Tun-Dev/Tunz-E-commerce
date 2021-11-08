@@ -7,10 +7,12 @@ const CartItem = ({ item, onUpdateCartQty, onRemoveFromCart }) => {
     const classes = useStyles();
     return (
         <Card>
-            <CardMedia image={item.media.source} alt={item.name} className={classes.media} />
-            <CardContent className={classes.cardContent} >
-                <Typography variant="h5" >{item.name}</Typography>
-                <Typography variant='body1' >{item.line_total.formatted_with_symbol}</Typography>
+            <CardMedia image={item.media.source} alt={item.name} className={classes.media} style={{ width: '300px' }} />
+            <CardContent className={classes.padding} >
+                <div className={classes.cardContent} >
+                    <Typography variant="body1" >{item.name}</Typography>
+                    <Typography variant='body2' >{item.line_total.formatted_with_symbol}</Typography>
+                </div>
             </CardContent>
             <CardActions className={classes.cardActions} >
                 <div className={classes.buttons} >

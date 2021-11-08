@@ -23,9 +23,12 @@ export default makeStyles((theme) => ({
   },
   cardDetails: {
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'column',
     marginTop: '10%',
     width: '100%',
     justifyContent: 'space-evenly',
   },
+  btns: {
+    marginTop: '20px',
+  }
 }));

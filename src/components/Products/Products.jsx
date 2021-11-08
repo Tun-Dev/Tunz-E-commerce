@@ -9,12 +9,21 @@ import styles from './Products.module.css'
 
 import useStyles from './styles'
 
+import { Footer } from "..";
+
 // const products = [
 //     { id: 1, name: "Shoes", description: "Running shoes.", price: "$5", image: Shoe },
 //     { id: 2, name: "Macbook", description: "Apple Macbook.", price: "$10", image: Mac },
 // ];
 
 const Products = ({ products, onAddToCart }) => {
+    const footerCheck = () => {
+        if (products.length) {
+            return <Footer />
+        } else {
+            return null
+        }
+    }
     const classes = useStyles()
     return (
         <main className={classes.content} >
@@ -34,6 +43,7 @@ const Products = ({ products, onAddToCart }) => {
                     </Grid>
                 ))}
             </Grid>
+            {footerCheck()}
         </main>
     );
 };
