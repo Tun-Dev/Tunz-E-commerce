@@ -28,9 +28,17 @@ const Product = ({ product, onAddToCart }) => {
         },
     };
 
+    const disableScroll = () => {
+        document.body.style.overflow = 'hidden'
+    }
+
+    const ableScroll = () => {
+        document.body.style.overflow = 'visible'
+    }
+
     return (
         <>
-            <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} style={customStyles}  >
+            <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} style={customStyles} onAfterOpen={() => disableScroll()} onAfterClose={() => ableScroll()}>
                 <CardActions disableSpacing className={classes.cardActionss}>
                     <IconButton aria-label="Add to Cart" onClick={() => onAddToCart(product.id, 1)} >
                         <AddShoppingCart />
